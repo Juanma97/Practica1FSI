@@ -781,9 +781,9 @@ class ramificacionAcotacion():
     def pop(self):
         e = self.A[self.start]
         self.start += 1
-        #if self.start > 5 and self.start > len(self.A) / 2:
-        self.A = self.A[self.start:]
-        self.start = 0
+        if self.start > 5 and self.start > len(self.A) / 2:
+            self.A = self.A[self.start:]
+            self.start = 0
         return e
 
 
@@ -808,9 +808,9 @@ class ramificacionAcotacionSubestimacion():
     def pop(self):
         e = self.A[self.start]
         self.start += 1
-        #if self.start > 5 and self.start > len(self.A) / 2:
-        self.A = self.A[self.start:]
-        self.start = 0
+        if self.start > 5 and self.start > len(self.A) / 2:
+            self.A = self.A[self.start:]
+            self.start = 0
         return e
 
 
