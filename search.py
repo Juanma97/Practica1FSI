@@ -91,7 +91,7 @@ class Node:
 
 
 # ______________________________________________________________________________
-## Uninformed Search algorithms
+
 
 def tree_search(problem, fringe):
     """Search through the successors of a problem to find a goal.
@@ -133,6 +133,9 @@ def graph_search(problem, fringe):
             fringe.extend(node.expand(problem))
             nodos_expandidos += 1
     return None
+
+def branchAndBound(problem):
+    return graph_search(problem, ramificacionAcotacion())
 
 
 def breadth_first_graph_search(problem):
@@ -177,16 +180,7 @@ def iterative_deepening_search(problem):
         if result is not 'cutoff':
             return result
 
-
-# ------------  Ramificacion y acotacion  ----------------
-
-def branchAndBound(problem):
-    return graph_search(problem, ramificacionAcotacion())
-
 # --------------------------------------------------------
-
-#______________________________________________________________________________
-# Informed (Heuristic) Search
 
 def best_first_graph_search(problem, f):
     """Search the nodes with the lowest f scores first.
@@ -213,8 +207,6 @@ def astar_search(problem, h=None):
 
     pass
 
-
-# -----  Ramificacion y acotacion con subestimacion  -----
 
 def graph_search_sub(problem, fringe):
     """Search through the successors of a problem to find a goal.
